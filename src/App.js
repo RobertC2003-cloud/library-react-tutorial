@@ -1,6 +1,6 @@
 import Nav from './components/nav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Books from "./Pages/Books";
 import { books } from "./data";
@@ -14,9 +14,11 @@ function App() {
     <Router>
     <div className="App">
       <Nav />
-       <Route path="/" exact component={Home} />
-       <Route path="/books" exact render={() => <Books books={books} />} />
-       <Route path="/books/:id" render={() => <BookInfo books={books} />} />
+      <Routes>
+       <Route path="/" exact element={<Home />} />
+       <Route path="/books" exact element={<Books books={books} />} />
+       <Route path="/books/:id" element={<BookInfo books={books} />} />
+       </Routes>
       <Footer />
     </div>
     </Router>
