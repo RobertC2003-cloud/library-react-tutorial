@@ -16,11 +16,11 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-       <Route path="/" exact element={<Home />} />
-       <Route path="/books" exact render={() => <Books books={books} />} />
-       <Route path="/books/:id" render={() => <BookInfo books={books} />} />
-       <Route path="/cart" render={() => <Cart books={books} />} />
-       </Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/books" element={<Books books={books} />} />
+          <Route path="/books/:id" element={<BookInfo books={books} />} />
+          <Route path="/cart" element={<Cart books={books} />} />
+      </Routes>
       <Footer />
     </div>
     </Router>
