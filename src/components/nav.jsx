@@ -4,7 +4,7 @@ import Library from '../assets/Library.svg';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ numberOfItems }) => {
     function openMenu () {
         document.body.classList += " menu--open";
     }
@@ -32,12 +32,14 @@ const Nav = () => {
                 <button className="btn__menu" onClick={openMenu}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
-                <Link className="nav__icon">
+                <li className="nav__icon">
                     <Link to="/cart" className="nav__link">
                     <FontAwesomeIcon icon="shopping-cart" />
                     </Link>
-                    <span className="cart__length">2</span>
-                </Link>
+                    {
+                        numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>
+                    }
+                </li>
             </ul>
             <div className="menu__backdrop">
                 <button className="btn__menu btn__menu--close" onClick={closeMenu}>

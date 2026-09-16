@@ -4,9 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 import Rating from '../components/ui/Rating';
 import Price from '../components/ui/Price';
 import Book from '../components/ui/Book';
-import Cart from './Cart';
 
-const BookInfo = ({ books, addToCart }) => {
+
+const BookInfo = ({ books, addToCart, cart }) => {
     const{ id } = useParams();
     const book = books.find(book => +book.id === +id); 
     const [added, setAdded] = React.useState(false);
@@ -16,7 +16,7 @@ const BookInfo = ({ books, addToCart }) => {
     }
 
     function bookExistsOnCart() {
-        return Cart.find(book => book.id === +id);
+        return cart.find(book => book.id === +id);
     }
 
     return (
