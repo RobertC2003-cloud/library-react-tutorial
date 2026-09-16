@@ -11,6 +11,8 @@ const Book = ({ book }) => {
     const mountedRef = useRef(true);
 
 useEffect(() => {
+  mountedRef.current = true;
+
   const image = new Image();
   image.src = book.url;
 
@@ -25,7 +27,8 @@ useEffect(() => {
   return () => {
     mountedRef.current = false;
   };
-}, [book.url]); 
+}, [book.url]);
+
 
   return (
    <div className="book">
