@@ -16,7 +16,7 @@ const Nav = ({ numberOfItems }) => {
         <nav>
         <div className="nav__container">
             <Link to="/">
-            <img src={Library} alt="Library Logo" className="nav__logo" />
+            <img src={Library} alt="Library Logo" className="logo" />
             </Link>
             <ul className="nav__links">
                 <li className="nav__list">
@@ -43,7 +43,7 @@ const Nav = ({ numberOfItems }) => {
             </ul>
             <div className="menu__backdrop">
                 <button className="btn__menu btn__menu--close" onClick={closeMenu}>
-                    <fontAwesomeIcon icon="times" />
+                    <FontAwesomeIcon icon="times" />
                 </button>
                 <ul className="menu__links">
                     <li className="menu__list">
